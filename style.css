@@ -1,0 +1,299 @@
+:root {
+  color: #2f2a24;
+  background: #ffffff;
+  font-family: "Hiragino Maru Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(circle at 12px 12px, #f2eee8 1.5px, transparent 1.5px),
+    #ffffff;
+  background-size: 34px 34px;
+}
+
+button {
+  font: inherit;
+}
+
+.game-shell {
+  width: min(880px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 48px 0;
+}
+
+.title-area {
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #9b8975;
+  font-size: 0.82rem;
+  letter-spacing: 0;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 8vw, 4.6rem);
+  font-weight: 800;
+}
+
+.play-area {
+  position: relative;
+  padding: 30px;
+  border: 3px solid #2f2a24;
+  border-radius: 8px 18px 10px 22px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 8px 8px 0 #f1d9a7;
+}
+
+.cat-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: clamp(190px, 34vw, 300px);
+  margin-bottom: 22px;
+}
+
+.cat-image {
+  display: block;
+  width: min(360px, 82vw);
+  max-height: 300px;
+  object-fit: contain;
+}
+
+.status-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.status-row > div {
+  min-height: 70px;
+  padding: 12px;
+  border: 2px solid #2f2a24;
+  border-radius: 8px 14px 8px 12px;
+  background: #fffaf0;
+}
+
+.label {
+  display: block;
+  margin-bottom: 4px;
+  color: #7c6d5d;
+  font-size: 0.82rem;
+}
+
+.status-row strong {
+  font-size: 1.35rem;
+}
+
+.trouble-card {
+  min-height: 190px;
+  padding: 24px;
+  border: 2px dashed #2f2a24;
+  border-radius: 18px 8px 16px 10px;
+  background: #ffffff;
+}
+
+.trouble-name {
+  margin: 0 0 12px;
+  color: #a35f33;
+  font-weight: 800;
+}
+
+.trouble-text {
+  margin: 0;
+  font-size: clamp(1.25rem, 3.8vw, 1.75rem);
+  line-height: 1.65;
+}
+
+.message {
+  min-height: 1.6em;
+  margin: 16px 0 0;
+  color: #6f6254;
+  font-weight: 700;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.actions.single-action {
+  grid-template-columns: 1fr;
+}
+
+.actions button,
+.result-panel button {
+  min-height: 58px;
+  border: 3px solid #2f2a24;
+  border-radius: 12px 8px 14px 9px;
+  color: #2f2a24;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 #2f2a24;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.actions button:hover,
+.result-panel button:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #2f2a24;
+}
+
+#wait-button {
+  background: #f7e6a4;
+}
+
+#handle-button,
+#restart-button {
+  background: #bde3d3;
+}
+
+.result-panel {
+  position: absolute;
+  inset: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  border: 3px solid #2f2a24;
+  border-radius: 10px 20px 12px 18px;
+  background: rgba(255, 255, 255, 0.98);
+  text-align: center;
+}
+
+.result-panel h2 {
+  margin: 0 0 12px;
+  font-size: 2rem;
+}
+
+.result-panel p {
+  width: min(100%, 520px);
+  margin: 6px 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+#result-score {
+  white-space: pre-line;
+}
+
+.result-panel button {
+  min-width: 180px;
+  margin-top: 22px;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .game-shell {
+    width: min(100% - 22px, 880px);
+    padding: 10px 0 10px;
+  }
+
+  .title-area {
+    margin-bottom: 14px;
+  }
+
+  .eyebrow {
+    margin-bottom: 4px;
+    font-size: 0.72rem;
+  }
+
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  .play-area {
+    padding: 14px 14px 10px;
+    box-shadow: 5px 5px 0 #f1d9a7;
+  }
+
+  .cat-area {
+    min-height: 140px;
+    margin-bottom: 12px;
+  }
+
+  .cat-image {
+    width: min(240px, 74vw);
+    max-height: 160px;
+  }
+
+  .status-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .status-row > div {
+    min-height: 54px;
+    padding: 8px 10px;
+  }
+
+  .label {
+    margin-bottom: 2px;
+    font-size: 0.74rem;
+  }
+
+  .status-row strong {
+    font-size: 1.08rem;
+  }
+
+  .actions {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 14px;
+  }
+
+  .trouble-card {
+    min-height: 142px;
+    padding: 14px;
+  }
+
+  .trouble-name {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+  }
+
+  .trouble-text {
+    font-size: 1.08rem;
+    line-height: 1.42;
+  }
+
+  .message {
+    min-height: 1.4em;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    line-height: 1.35;
+  }
+
+  .actions button,
+  .result-panel button {
+    min-height: 54px;
+  }
+
+  .result-panel {
+    inset: 14px;
+    padding: 18px;
+  }
+
+  .result-panel p {
+    width: min(100%, 320px);
+    font-size: 1.05rem;
+    line-height: 1.45;
+  }
+}

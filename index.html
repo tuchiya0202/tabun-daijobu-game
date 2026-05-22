@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>たぶん大丈夫</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <section class="title-area" aria-labelledby="game-title">
+        <p class="eyebrow">small browser game</p>
+        <h1 id="game-title">たぶん大丈夫</h1>
+      </section>
+
+      <section class="play-area" aria-live="polite">
+        <div class="cat-area">
+          <img
+            id="cat-image"
+            class="cat-image"
+            src="assets/images/cat_normal.png"
+            alt="いまの状況を見守る猫"
+          />
+        </div>
+
+        <div class="status-row">
+          <div>
+            <span class="label">できごと</span>
+            <strong><span id="trouble-count">1</span>/10</strong>
+          </div>
+          <div>
+            <span class="label">あやしさ</span>
+            <strong><span id="stage-count">0</span>/3</strong>
+          </div>
+          <div>
+            <span class="label">やらかし</span>
+            <strong><span id="miss-count">0</span>/3</strong>
+          </div>
+          <div>
+            <span class="label">無事度</span>
+            <strong id="score-count">0</strong>
+          </div>
+        </div>
+
+        <article class="trouble-card">
+          <p id="trouble-name" class="trouble-name"></p>
+          <p id="trouble-text" class="trouble-text"></p>
+          <p id="message" class="message"></p>
+        </article>
+
+        <div class="actions">
+          <button id="wait-button" type="button">たぶん大丈夫</button>
+          <button id="handle-button" type="button">対応する</button>
+        </div>
+
+        <section id="result-panel" class="result-panel hidden" aria-live="assertive">
+          <h2>結果</h2>
+          <p id="result-score"></p>
+          <p id="result-rank"></p>
+          <button id="restart-button" type="button">もう一回</button>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
